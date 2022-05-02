@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">ChitChat</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_welcome_back">Welcome Back !</string>
+    <string name="txt_sign_in_to_continue">Sign in to Continue.</string>
+    <string name="txt_forget_password">Forget Password ?!</string>
+    <string name="txt_dont_have_account">Dont have Account..?!</string>
+    <string name="edt_password">Password</string>
+    <string name="edt_e_mail_adress">E-mail Adress</string>
+    <string name="txt_create_one">Create One</string>
+    <string name="txt_glad_to_have_you_here">Glad to have you here!</string>
+    <string name="edt_full_name">Full name</string>
+    <string name="txt_create_account_to_start_chatting">Create account to start chatting</string>
+    <string name="edt_date_of_birth">Date of Birth</string>
+    <string name="txt_sign_up">Sign Up</string>
+    <string name="txt_sign_in">Sign In</string>
+    <string name="txt_by_registring_you_confirm_thatyou_accept_our">By registring, you confirm that you accept our</string>
+    <string name="edt_phone_number">Phone Number</string>
+    <string name="txt_stay_connected_to_the_world">Stay Connected to the World.</string>
+    <string name="itm_logout">Logout</string>
+    <string name="txt_back_to_sign_in">Back to Sign in</string>
+    <string name="txt_forgot_password">Forgot Password !</string>
+    <string name="confirmation_code">Confirmation Code</string>
+    <string name="edt_new_password">New Password</string>
+    <string name="edt_confirm_new_password">Confirm new Password</string>
+    <string name="btn_submit">Submit</string>
+    <string name="txt_send">Send</string>
+    <string name="txt_add_photo">Add Photo</string>
+    <string name="txtv_select_user">Select User</string>
+    <string name="edt_type_a_message">Type a message</string>
+    <string name="txtv_online">Online</string>
+</resources>

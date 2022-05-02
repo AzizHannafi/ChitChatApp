@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ChitChat/app/src/main/res/drawable-v24/background_user_itemm.xml" value="0.1065" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/background_chat_input.xml" value="0.1735" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/background_content_bottom.xml" value="0.1735" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/background_content_top.xml" value="0.1735" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/background_icon.xml" value="0.1735" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/background_image_profil.xml" value="0.1735" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/background_receive_message.xml" value="0.1735" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/background_sent_message.xml" value="0.1735" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/btn_shape.xml" value="0.174" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/cpb.xml" value="0.174" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/ic_add.xml" value="0.1735" />
+        <entry key="..\:/ChitChat/app/src/main/res/drawable/input_field_phone_number.xml" value="0.174" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/activity_authentication.xml" value="0.27447916666666666" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/activity_authentication_activity.xml" value="0.1334853090172239" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/fragment_chat.xml" value="0.264" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/fragment_sign_in.xml" value="0.27447916666666666" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/fragment_sign_up.xml" value="0.27447916666666666" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/fragment_users.xml" value="0.2" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/item_conatiner_recieve_message.xml" value="0.6" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/item_container_recent_conversion.xml" value="0.13541666666666666" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/item_container_sent_message.xml" value="0.1" />
+        <entry key="..\:/ChitChat/app/src/main/res/layout/item_container_user.xml" value="0.264" />
+        <entry key="..\:/ChitChat/app/src/main/res/menu/menu_drawer.xml" value="0.27447916666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

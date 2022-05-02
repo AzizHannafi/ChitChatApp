@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="img_signin_height">300dp</dimen>
+    <dimen name="img_signup_height">250dp</dimen>
+    <dimen name="txt_welcome_size">30sp</dimen>
+    <dimen name="txt_spalsh_size">35sp</dimen>
+    <dimen name="txt_standard_size">15sp</dimen>
+    <dimen name="el_margin">10dp</dimen>
+    <dimen name="el_margin_input">3dp</dimen>
+    <dimen name="el_padding">15dp</dimen>
+    <dimen name="img_widht">80dp</dimen>
+    <dimen name="img_height">80dp</dimen>
+
+</resources>
