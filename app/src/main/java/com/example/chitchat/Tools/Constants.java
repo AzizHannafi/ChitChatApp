@@ -33,27 +33,12 @@ public class Constants {
 
     public static final String KEY_AVAILABILITY = "availability";
 
-    public static final String REMOTE_MEG_AUTORIZATION = "Authorization";
+    public static final String REMOTE_MEG_AUTORIZATION = "key=AAAA8NX4Fm4:APA91bEU7vKLwfooL2T6_TFXhJ0Prgr3XR2CAu0Te_qB5M_0_5-LjTjsLtUxsi1f7SyZQ2QiY_4LClTEzACeWmJDCTfkUq566gepNyaAlxUC4KyVeomQkBMSn5rfEq4w2-kNTmyxjJeR";
     public static final String REMOTE_MSG_CONTENT_TYPE = "Content-Type";
-    public static final String REMOTE_MSG_DATA = "data";
-    public static final String REMOTE_MSG_REGISTRATION_IDS = "registration_ids";
 
 
-    public static HashMap<String,String> remoteMsgHeaders = null;
-    public static HashMap<String,String> getRemoteMsgHeaders (){
-        if(remoteMsgHeaders == null){
-            remoteMsgHeaders = new HashMap<>();
-            remoteMsgHeaders.put(
-                    REMOTE_MEG_AUTORIZATION,
-                    "key=AAAA8NX4Fm4:APA91bEU7vKLwfooL2T6_TFXhJ0Prgr3XR2CAu0Te_qB5M_0_5-LjTjsLtUxsi1f7SyZQ2QiY_4LClTEzACeWmJDCTfkUq566gepNyaAlxUC4KyVeomQkBMSn5rfEq4w2-kNTmyxjJeR"
-            );
-            remoteMsgHeaders.put(
-                    REMOTE_MSG_CONTENT_TYPE,
-                    "application/json"
-            );
-        }
-        return remoteMsgHeaders;
-    };
+
+
 
 
 

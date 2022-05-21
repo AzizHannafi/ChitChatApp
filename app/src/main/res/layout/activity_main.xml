@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frl_home"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
@@ -11,7 +12,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/constarine_handler"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_12sdp"
+    app:layout_constraintBottom_toTopOf="@id/frl_main">
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/image_user_profile"
         android:layout_width="@dimen/_30sdp"
@@ -78,12 +81,13 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
+        android:id="@+id/frl_main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/_16sdp"
-        android:background="@drawable/background_content_bottom"
+        android:background="@drawable/background_icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constarine_handler">
+        app:layout_constraintTop_toTopOf="@id/constarine_handler">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/conversation_recycler_view"
@@ -113,6 +117,7 @@
             android:layout_marginRight="@dimen/_24sdp"
             android:layout_marginBottom="@dimen/_24sdp"
             android:backgroundTint="@color/blue_signal"
+
             android:src="@drawable/ic_add"
             android:tint="@color/white" />
     </FrameLayout>

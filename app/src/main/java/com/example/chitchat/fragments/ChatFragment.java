@@ -28,8 +28,8 @@ import com.example.chitchat.Models.User;
 import com.example.chitchat.R;
 import com.example.chitchat.Tools.Constants;
 import com.example.chitchat.Tools.PreferenceManager;
-import com.example.chitchat.network.ApiClinet;
-import com.example.chitchat.network.ApiService;
+import com.example.chitchat.fierbase.FCMSend;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentChange;
@@ -39,9 +39,6 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -49,10 +46,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 @RequiresApi(api = Build.VERSION_CODES.N)
@@ -108,7 +101,8 @@ public class ChatFragment extends Fragment {
         loadRecieveDetails(txtv_name);
         init();
         listenMessage();
-
+        getRecieverFclToken();
+        System.out.println("reciver token :"+reciveUser.token);
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,38 +114,7 @@ public class ChatFragment extends Fragment {
 
         return v;
     }
-    private void showToast(String message){
-        Toast.makeText(getContext().getApplicationContext(),message,Toast.LENGTH_LONG).show();
-    }
 
-    private void sendNotification(String messageBody){
-        ApiClinet.getClient().create(ApiService.class).sendMessage(
-                Constants.getRemoteMsgHeaders(),
-                messageBody
-        ).enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                if(response.isSuccessful()){
-                    try {
-                        JSONObject responseJson = new JSONObject(response.body());
-                        JSONArray results = responseJson.getJSONArray("results");
-                        if(responseJson.getInt("failure" )== 1){
-                            JSONObject error = (JSONObject) results.get(0);
-                            showToast(error.getString("error"));
-                        }
-                    }catch (JSONException e){
-                        e.printStackTrace();
-                    }
-                    showToast("Notification sent");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-
-            }
-        });
-    }
 
     private void init() {
         preferenceManager = new PreferenceManager(getContext().getApplicationContext());
@@ -183,6 +146,20 @@ public class ChatFragment extends Fragment {
                 .whereEqualTo(Constants.KEY_SENDER_ID, reciveUser.id)
                 .whereEqualTo(Constants.KEY_RECEIVER_ID, preferenceManager.getString(Constants.KEY_USER_ID))
                 .addSnapshotListener(eventListener);
+    }
+
+    private  void getRecieverFclToken (){
+        database.collection(Constants.KEY_COLLECTION_USERS)
+                .document(String.valueOf(reciveUser.id)).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                DocumentSnapshot document = task.getResult();
+                if (task.isSuccessful()) {
+                    reciveUser.token  = document.getString(Constants.KEY_FCM_TOKEN);
+                }
+
+                }
+        });
     }
 
     private void listenAvailabilityOfReciever(TextView txt_online, TextView txt_offline) {
@@ -242,26 +219,16 @@ public class ChatFragment extends Fragment {
             addConversation(conversation);
         }
 
-        /*if(!isRecieverAvailable){
-            try {
-                JSONArray tokens = new JSONArray();
-                tokens.put(reciveUser.token);
 
-                JSONObject data = new JSONObject();
-                data.put(Constants.KEY_USER_ID,preferenceManager.getString(Constants.KEY_USER_ID));
-                data.put(Constants.KEY_NAME,preferenceManager.getString(Constants.KEY_NAME));
-                data.put(Constants.KEY_FCM_TOKEN,preferenceManager.getString(Constants.KEY_FCM_TOKEN));
-                data.put(Constants.KEY_MESSAGE,preferenceManager.getString(edt_inputMessage.getText().toString()));
+        if(isRecieverAvailable== false){
+            FCMSend.pushNotification( getContext().getApplicationContext()
+                    ,reciveUser.token
+                    ,preferenceManager.getString(Constants.KEY_NAME)
+                    ,edt_inputMessage.getText().toString()
 
-              JSONObject body = new JSONObject();
-              body.put(Constants.REMOTE_MSG_DATA,data);
-              body.put(Constants.REMOTE_MSG_REGISTRATION_IDS,tokens);
+            ) ;
 
-              sendNotification(body.toString());
-            }catch (Exception e){
-                showToast(e.getMessage());
-            }
-        }*/
+        }
         edt_inputMessage.setText(null);
     }
 
